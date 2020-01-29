@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "runtimeVersion": "10.18.1",
+      "request": "launch",
+      "name": "Launch",
+      "program": "${workspaceFolder}/sample.js"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getPalette return default values 1`] = `
+Array [
+  Array [
+    169,
+    150,
+    124,
+  ],
+  Array [
+    22,
+    19,
+    20,
+  ],
+  Array [
+    144,
+    123,
+    100,
+  ],
+  Array [
+    197,
+    177,
+    151,
+  ],
+  Array [
+    111,
+    95,
+    77,
+  ],
+  Array [
+    89,
+    72,
+    58,
+  ],
+  Array [
+    89,
+    79,
+    77,
+  ],
+  Array [
+    180,
+    148,
+    125,
+  ],
+  Array [
+    147,
+    138,
+    132,
+  ],
+  Array [
+    180,
+    160,
+    116,
+  ],
+]
+`;
