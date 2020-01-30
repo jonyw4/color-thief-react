@@ -2,13 +2,14 @@
   "name": "color-thief-react",
   "version": "1.0.0",
   "description": "A React component with hooks for Color Thief. Grab color palette from an image with javascript",
-  "main": "index.js",
+  "main": "dist",
   "author": "Jonathan Célio",
   "license": "ISC",
   "scripts": {
-    "build": "babel src -d src",
-    "eslint": "eslint src",
-    "test": "jest"
+    "eslint": "eslint 'src/*'",
+    "test": "jest --coverage",
+    "testCI": "npm run test && cat coverage/lcov.info | coveralls",
+    "build": "del dist/* && babel src -d dist"
   },
   "jest": {
     "transform": {
@@ -30,6 +31,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "canvas": "^2.6.1",
+    "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.20.0",
@@ -38,5 +40,13 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^25.1.0"
-  }
+  },
+  "keywords": [
+    "color-thief-react",
+    "react-color-thief",
+    "colorthiefreact",
+    "color-thief",
+    "color-thief-react-hook",
+    "colorthief"
+  ]
 }
