@@ -1,7 +1,9 @@
 # Color Thief (React)
-
 🎨 A React component with hooks for Color Thief. Grab color palette from an image with javascript
 Use the official Lokesh's [color-thief](https://github.com/lokesh/color-thief/).
+
+[![Coverage Status](https://coveralls.io/repos/github/jonyw4/color-thief-react/badge.svg?branch=master)](https://coveralls.io/github/jonyw4/color-thief-react?branch=master) [![Build Status](https://travis-ci.com/jonyw4/color-thief-react.svg?branch=master)](https://travis-ci.com/jonyw4/color-thief-react)
+
 
 ### Demo
 **See a real [demo in the Codesandbox](https://codesandbox.io/s/color-thief-react100-zh6f8)**

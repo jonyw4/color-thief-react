@@ -8,7 +8,7 @@
   "scripts": {
     "eslint": "eslint 'src/*'",
     "test": "jest --coverage",
-    "testCI": "npm run test && cat coverage/lcov.info | coveralls",
+    "testCI": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "build": "del dist/* && babel src -d dist"
   },
   "jest": {
