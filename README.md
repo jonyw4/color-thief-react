@@ -4,6 +4,10 @@ Use the official Lokesh's [color-thief](https://github.com/lokesh/color-thief/).
 
 [![Coverage Status](https://coveralls.io/repos/github/jonyw4/color-thief-react/badge.svg?branch=master)](https://coveralls.io/github/jonyw4/color-thief-react?branch=master) [![Build Status](https://travis-ci.com/jonyw4/color-thief-react.svg?branch=master)](https://travis-ci.com/jonyw4/color-thief-react)
 
+### Do you like?
+*Please, consider supporting my work as a lot of effort takes place to create this component! Thanks a lot.*
+<a href="https://www.buymeacoffee.com/jonycelio" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
 
 ### Demo
 **See a real [demo in the Codesandbox](https://codesandbox.io/s/color-thief-react100-zh6f8)**
