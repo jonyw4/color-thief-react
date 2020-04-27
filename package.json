@@ -7,8 +7,8 @@
   "license": "ISC",
   "scripts": {
     "eslint": "eslint 'src/*'",
-    "test:unit": "jest --coverage",
-    "test": "jest --coverage --coverageReporters=text-lcov | codecov",
+    "test:unit": "jest --collectCoverage",
+    "test": "jest --collectCoverage | codecov",
     "build": "del dist/* && babel src -d dist"
   },
   "jest": {
