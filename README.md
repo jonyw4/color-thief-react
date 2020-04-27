@@ -2,7 +2,10 @@
 🎨 A React component with hooks for Color Thief. Grab color palette from an image with javascript
 Use the official Lokesh's [color-thief](https://github.com/lokesh/color-thief/).
 
-[![Coverage Status](https://coveralls.io/repos/github/jonyw4/color-thief-react/badge.svg?branch=master)](https://coveralls.io/github/jonyw4/color-thief-react?branch=master) [![Build Status](https://travis-ci.com/jonyw4/color-thief-react.svg?branch=master)](https://travis-ci.com/jonyw4/color-thief-react)
+[![npm (scoped)](https://img.shields.io/npm/v/color-thief-react.svg)](https://www.npmjs.com/package/color-thief-react)
+![Build Status](https://github.com/jonyw4/color-thief-react/workflows/Test,%20build%20and%20deploy/badge.svg)
+[![codecov](https://codecov.io/gh/jonyw4/color-thief-react/branch/master/graph/badge.svg)](https://codecov.io/gh/jonyw4/color-thief-react)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ### Do you like?
 *Please, consider supporting my work as a lot of effort takes place to create this component! Thanks a lot.*
