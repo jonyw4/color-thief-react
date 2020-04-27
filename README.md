@@ -6,9 +6,11 @@ Use the official Lokesh's [color-thief](https://github.com/lokesh/color-thief/).
 ![Build Status](https://github.com/jonyw4/color-thief-react/workflows/Test,%20build%20and%20deploy/badge.svg)
 [![codecov](https://codecov.io/gh/jonyw4/color-thief-react/branch/master/graph/badge.svg)](https://codecov.io/gh/jonyw4/color-thief-react)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![GitHub](https://img.shields.io/github/license/jonyw4/color-thief-react)
 
 ### Do you like?
 *Please, consider supporting my work as a lot of effort takes place to create this component! Thanks a lot.*
+
 <a href="https://www.buymeacoffee.com/jonycelio" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
 
