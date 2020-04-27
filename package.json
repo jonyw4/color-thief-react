@@ -9,7 +9,7 @@
     "lint": "eslint 'src/*'",
     "test:unit": "jest --collectCoverage",
     "test": "jest --collectCoverage | codecov",
-    "build": "del dist/* && babel src -d dist"
+    "build": "babel src -d dist"
   },
   "jest": {
     "transform": {
