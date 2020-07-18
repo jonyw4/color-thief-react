@@ -24,7 +24,7 @@
     
   },
   "devDependencies": {
-    "codecov": "3.7.0",
+    "codecov": "3.7.1",
     "husky": "4.2.5",
     "semantic-release": "17.0.8",
     "@babel/cli": "7.10.4",
