@@ -1,6 +1,6 @@
 {
   "name": "color-thief-react",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "description": "A React component with hooks for Color Thief. Grab color palette from an image with javascript",
   "main": "lib/index.js",
   "author": "Jonathan Célio",
