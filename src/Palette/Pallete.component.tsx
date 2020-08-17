@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorFormats } from 'types';
+import { ColorFormats } from '../types';
 import usePalette, { UsePaletteState } from './usePalette';
 
 function Palette({

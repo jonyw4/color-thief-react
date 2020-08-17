@@ -5,7 +5,7 @@ import {
   reducer,
   initialReducerState
 } from '../utils';
-import { ColorFormats, ReducerState } from 'types';
+import { ColorFormats, ReducerState } from '../types';
 
 export type UseColorState = ReducerState<
   ReturnType<typeof getPredominantColorFromImgURL>

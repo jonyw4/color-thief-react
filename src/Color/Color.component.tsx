@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorFormats } from 'types';
+import { ColorFormats } from '../types';
 import useColor, { UseColorState } from './useColor';
 
 function Color({

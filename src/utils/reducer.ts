@@ -1,4 +1,4 @@
-import { ReducerState, ReducerAction } from 'types';
+import { ReducerState, ReducerAction } from '../types';
 import initialReducerState from './initialReducerState';
 
 export default function reducer<State extends ReducerState<any>>(

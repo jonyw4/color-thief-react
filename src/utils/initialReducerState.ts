@@ -1,4 +1,4 @@
-import { ReducerState } from 'types';
+import { ReducerState } from '../types';
 
 const initialReducerState: ReducerState<any> = {
   loading: true,

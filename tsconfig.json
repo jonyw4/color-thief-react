@@ -19,7 +19,6 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -31,7 +30,7 @@
   ],
   "exclude": [
     "node_modules",
-    "build",
+    "lib",
     "scripts"
   ]
 }
