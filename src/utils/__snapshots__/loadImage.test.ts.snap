@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loadImage should try to load a image and load correctly 1`] = `
+<img
+  crossorigin="null"
+  src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
+/>
+`;

@@ -11,7 +11,7 @@ export default function loadImage(
       resolve(img);
     });
     img.addEventListener('error', () => {
-      reject(new Error(`Failed to load image's URL: ${url}`));
+      reject(new Error(`Color Thief React | Failed to load image URL: ${url}`));
     });
     img.crossOrigin = crossOrigin;
     img.src = url;

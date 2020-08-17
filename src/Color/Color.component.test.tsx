@@ -141,4 +141,35 @@ describe('Color', () => {
     },
     timeout
   );
+  test(
+    'should try to get color from a inexistent image and return error',
+    async () => {
+      const children = jest.fn(() => null);
+
+      await act(async () => {
+        render(
+          <Color src="error.jpg" children={children} crossOrigin="Anonymous" />
+        );
+      });
+
+      expect(children).toHaveBeenCalledWith({
+        loading: true,
+        error: undefined,
+        data: undefined
+      });
+
+      await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
+        timeout
+      });
+
+      expect(children).toHaveBeenCalledWith({
+        loading: false,
+        error: new Error(
+          'Color Thief React | Failed to load image URL: error.jpg'
+        ),
+        data: undefined
+      });
+    },
+    timeout
+  );
 });

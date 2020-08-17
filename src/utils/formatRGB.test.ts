@@ -10,6 +10,6 @@ describe('formatRGB', () => {
     expect(formatRGB(rgbArray, 'hex')).toBe('#e66622');
   });
   test('should return a array of RGB', () => {
-    expect(formatRGB(rgbArray, 'hex')).toBe(rgbArray);
+    expect(formatRGB(rgbArray, 'rgbArray')).toBe(rgbArray);
   });
 });

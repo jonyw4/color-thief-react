@@ -2,20 +2,20 @@ import React from 'react';
 import { ColorFormats } from 'types';
 import usePalette, { UsePaletteState } from './usePalette';
 
-function Color({
+function Palette({
   src,
   colorCount = 2,
   format = 'rgbString',
   crossOrigin = undefined,
   quality = 10,
   children
-}: ColorProps): JSX.Element {
+}: PaletteProps): JSX.Element {
   const state = usePalette(src, colorCount, format, { crossOrigin, quality });
 
   return <>{children(state)}</>;
 }
 
-export type ColorProps = {
+export type PaletteProps = {
   /**
    * Count of colors of the palette
    */
@@ -39,4 +39,4 @@ export type ColorProps = {
   children: (state: UsePaletteState) => React.ReactNode;
 };
 
-export default Color;
+export default Palette;

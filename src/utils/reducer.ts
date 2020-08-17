@@ -5,14 +5,11 @@ export default function reducer<State extends ReducerState<any>>(
   state: State,
   action: ReducerAction
 ): State {
-  switch (action.type) {
-    case 'start':
-      return <State>initialReducerState;
-    case 'resolve':
-      return { ...state, data: action.payload, loading: false };
-    case 'reject':
-      return { ...state, error: action.payload, loading: false };
-    default:
-      return state;
-  }
+  const responses: { [key in ReducerAction['type']]: () => State } = {
+    start: () => <State>initialReducerState,
+    resolve: () => ({ ...state, data: action.payload, loading: false }),
+    reject: () => ({ ...state, error: action.payload, loading: false })
+  };
+
+  return responses[action.type]();
 }

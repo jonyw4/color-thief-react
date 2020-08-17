@@ -10,11 +10,11 @@ export default function formatRGB(
   arrayRGB: ArrayRGB,
   format: ColorFormats
 ): string | ArrayRGB {
-  const responses: { [key in ColorFormats]: string | ArrayRGB } = {
-    rgbString: rgbStringfy(...arrayRGB),
-    hex: rgbToHex(...arrayRGB),
-    rgbArray: arrayRGB
+  const responses: { [key in ColorFormats]: () => string | ArrayRGB } = {
+    rgbString: () => rgbStringfy(...arrayRGB),
+    hex: () => rgbToHex(...arrayRGB),
+    rgbArray: () => arrayRGB
   };
 
-  return responses[format];
+  return responses[format]();
 }

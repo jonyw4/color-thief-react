@@ -1,29 +1,12 @@
 import loadImage from './loadImage';
 
 describe('loadImage', () => {
-  const events: Partial<
-    {
-      [key in keyof WindowEventMap]: jest.Mock;
-    }
-  > = {};
-
-  beforeEach(() => {
-    const events = {};
-    window.addEventListener = jest.fn((event, cb) => {
-      events[event] = cb;
-    });
-  });
   test('should try to load a image and load correctly', async () => {
-    events.load?.mockImplementation(() => true);
-    await expect(
-      loadImage('https://i.picsum.photos/id/237/536/354.jpg')
-    ).resolves.toBe('');
+    const img = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png';
+    await expect(loadImage(img)).resolves.toMatchSnapshot();
   });
-  test('should try load a image and throw an error', async () => {
-    events.load?.mockImplementation(() => true);
-    events.error?.mockImplementation(() => true);
-    await expect(
-      loadImage('https://i.picsum.photos/id/237/536/354.jpg')
-    ).rejects.toThrow(Error);
+  test('should try load a false image and throw an error', async () => {
+    const img = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.jpg';
+    await expect(loadImage(img)).rejects.toThrow(Error);
   });
 });

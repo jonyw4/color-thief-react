@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 import React from 'react';
 import { render, waitFor, act } from '@testing-library/react';
 import Palette from './Pallete.component';
@@ -21,7 +20,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: true,
         error: undefined,
-        data: []
+        data: undefined
       });
 
       await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
@@ -31,7 +30,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: false,
         error: undefined,
-        data: ''
+        data: ['rgb(188, 192, 199)', 'rgb(97, 61, 122)']
       });
     },
     timeout
@@ -57,7 +56,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: true,
         error: undefined,
-        data: []
+        data: undefined
       });
 
       await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
@@ -67,7 +66,10 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: false,
         error: undefined,
-        data: ''
+        data: [
+          [188, 192, 199],
+          [97, 61, 122]
+        ]
       });
     },
     timeout
@@ -93,7 +95,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: true,
         error: undefined,
-        data: []
+        data: undefined
       });
 
       await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
@@ -103,7 +105,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: false,
         error: undefined,
-        data: ''
+        data: ['rgb(188, 192, 199)', 'rgb(97, 61, 122)']
       });
     },
     timeout
@@ -129,7 +131,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: true,
         error: undefined,
-        data: []
+        data: undefined
       });
 
       await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
@@ -139,7 +141,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: false,
         error: undefined,
-        data: ''
+        data: ['#bcc0c7', '#613d7a']
       });
     },
     timeout
@@ -166,7 +168,7 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: true,
         error: undefined,
-        data: []
+        data: undefined
       });
 
       await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
@@ -176,7 +178,43 @@ describe('Palette', () => {
       expect(children).toHaveBeenCalledWith({
         loading: false,
         error: undefined,
-        data: ''
+        data: ['#c0c3c8', '#613d7a', '#5b6fa1', '#966a59']
+      });
+    },
+    timeout
+  );
+
+  test(
+    'should try to get color from a inexistent image and return error',
+    async () => {
+      const children = jest.fn(() => null);
+
+      await act(async () => {
+        render(
+          <Palette
+            src="error.jpg"
+            children={children}
+            crossOrigin="Anonymous"
+          />
+        );
+      });
+
+      expect(children).toHaveBeenCalledWith({
+        loading: true,
+        error: undefined,
+        data: undefined
+      });
+
+      await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
+        timeout
+      });
+
+      expect(children).toHaveBeenCalledWith({
+        loading: false,
+        error: new Error(
+          'Color Thief React | Failed to load image URL: error.jpg'
+        ),
+        data: undefined
       });
     },
     timeout
