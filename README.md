@@ -22,6 +22,10 @@ Use the official Lokesh's [color-thief](https://github.com/lokesh/color-thief/).
 npm i -S color-thief-react
 ```
 
+```
+yarn add color-thief-react
+```
+
 ## Basic Usage
 ```jsx
 import Color from 'color-thief-react';
@@ -42,7 +46,7 @@ Return the predominant color of the image. You can use a React component or hook
 
 `src`: **Required**. Link of the image
 
-`format`: Format of the response. Can be 'rgbToString' or 'rgbToArray' or 'hex'
+`format`: Format of the response. Can be `rgbString`, `hex` or `rgbArray`. Default is `rgbString`
 
 `crossOrigin`: Tag cross-origin for image
 
@@ -54,7 +58,7 @@ import { useColor } from 'color-thief-react'
 
 const { data, loading, error } = useColor(src, format, { crossOrigin, quality})
 
-<div style={{ color: data.vibrant }}>
+<div style={{ color: data }}>
   Text with the predominant color
 </div>
 ```
@@ -77,7 +81,7 @@ Return a palette of colors based on the predominance of colors on the image. You
 
 `colorCount`: Count of colors of the palette. Default is 2
 
-`format`: Format of the response. Can be `rgbToString` or `rgbToArray` or `hex`. Default is `rgbToString`
+`format`: Format of the response. Can be `rgbString`, `hex` or `rgbArray`. Default is `rgbString`
 
 `crossOrigin`: Tag cross-origin for image
 
