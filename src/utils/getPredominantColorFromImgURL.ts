@@ -1,6 +1,6 @@
-import ColorThief, { ArrayRGB } from 'colorthief/dist/color-thief.umd.js';
+import ColorThief from 'colorthief/dist/color-thief.umd.js';
 import { loadImage, formatRGB } from '.';
-import type { ColorFormats } from '../types';
+import type { ColorFormats, ArrayRGB } from '../types';
 
 export default async function getPredominantColorFromImgURL(
   imgSrc: string,

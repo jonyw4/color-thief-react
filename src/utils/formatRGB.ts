@@ -1,7 +1,6 @@
-import { ArrayRGB } from 'colorthief/dist/color-thief.umd.js';
 import rgbStringfy from './rgbStringfy';
 import rgbToHex from './rgbToHex';
-import type { ColorFormats } from '../types';
+import type { ColorFormats, ArrayRGB } from '../types';
 
 /**
  * Transform a RGB Array to another color format
