@@ -7,36 +7,6 @@ describe('Palette', () => {
   const timeout = 10000;
 
   test(
-    'should be a children with default format',
-    async () => {
-      const children = jest.fn(() => <></>);
-
-      await act(async () => {
-        render(
-          <Palette src={src} children={children} crossOrigin="Anonymous" />
-        );
-      });
-
-      expect(children).toHaveBeenCalledWith({
-        loading: true,
-        error: undefined,
-        data: undefined
-      });
-
-      await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
-        timeout
-      });
-
-      expect(children).toHaveBeenCalledWith({
-        loading: false,
-        error: undefined,
-        data: ['rgb(188, 192, 199)', 'rgb(97, 61, 122)']
-      });
-    },
-    timeout
-  );
-
-  test(
     'should be a children with rgb array',
     async () => {
       const format = 'rgbArray';
@@ -195,6 +165,7 @@ describe('Palette', () => {
             src="error.jpg"
             children={children}
             crossOrigin="Anonymous"
+            format="rgbArray"
           />
         );
       });

@@ -5,26 +5,22 @@ import {
   reducer,
   initialReducerState
 } from '../utils';
-import { ColorFormats, ReducerState, UnwrapPromise } from '../types';
-
-export type UseColorState = ReducerState<
-  UnwrapPromise<ReturnType<typeof getPredominantColorFromImgURL>>
->;
+import { ColorFormats, ReducerState, ArrayRGB } from '../types';
 
 /**
  * React Hook to use get color from img url
  */
-export default function useColor(
+export default function useColor<
+  F extends ColorFormats,
+  S extends ReducerState<F extends 'rgbArray' ? ArrayRGB : string>
+>(
   imgSrc: string,
-  format: ColorFormats = 'rgbString',
+  format: F,
   options: { crossOrigin?: string; quality?: number } = {}
-): UseColorState {
+): S {
   const { crossOrigin = null, quality = 10 } = options;
 
-  const [state, dispatch] = useReducer(
-    reducer,
-    <UseColorState>initialReducerState
-  );
+  const [state, dispatch] = useReducer(reducer, <S>initialReducerState);
 
   useCurrentEffect(
     (isCurrent) => {
@@ -45,5 +41,5 @@ export default function useColor(
     [imgSrc]
   );
 
-  return state;
+  return <S>state;
 }

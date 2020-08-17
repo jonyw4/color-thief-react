@@ -1,20 +1,26 @@
 import React from 'react';
-import { ColorFormats } from '../types';
-import useColor, { UseColorState } from './useColor';
+import { ColorFormats, ReducerState, ArrayRGB } from '../types';
+import useColor from './useColor';
 
-function Color({
+function Color<
+  F extends ColorFormats,
+  S extends ReducerState<F extends 'rgbArray' ? ArrayRGB : string>
+>({
   src,
-  format = 'rgbString',
+  format,
   crossOrigin = undefined,
   quality = 10,
   children
-}: ColorProps): JSX.Element {
-  const state = useColor(src, format, { crossOrigin, quality });
+}: ColorProps<F, S>): JSX.Element {
+  const state: S = useColor(src, format, { crossOrigin, quality });
 
   return <>{children(state)}</>;
 }
 
-export type ColorProps = {
+export type ColorProps<
+  F extends ColorFormats,
+  S extends ReducerState<F extends 'rgbArray' ? ArrayRGB : string>
+> = {
   /**
    * Link of the image
    */
@@ -22,7 +28,7 @@ export type ColorProps = {
   /**
    * Format of the response.
    */
-  format?: ColorFormats;
+  format: F;
   /**
    * Tag cross-origin for image
    */
@@ -31,7 +37,7 @@ export type ColorProps = {
    * Quality determines how many pixels are skipped before the nex one is sampled.We rarely need to sample every single pixel in the image to get good results. The bigger the number, the faster a value will be returned. Read more in https://lokeshdhakar.com/projects/color-thief/
    */
   quality?: number;
-  children: (state: UseColorState) => React.ReactNode;
+  children: (state: S) => React.ReactNode;
 };
 
 export default Color;

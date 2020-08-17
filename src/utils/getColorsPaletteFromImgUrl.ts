@@ -5,13 +5,15 @@ import type { ColorFormats, ArrayRGB } from '../types';
 /**
  * Get a list of colors from img url
  */
-export default async function getColorsPaletteFromImgUrl(
+export default async function getColorsPaletteFromImgUrl<
+  T extends ColorFormats
+>(
   imgUrl: string,
   colorCount = 2,
-  format: ColorFormats = 'rgbString',
+  format: T,
   crossOrigin: string | null = null,
   quality = 10
-): Promise<(string | ArrayRGB)[]> {
+): Promise<(T extends 'rgbArray' ? ArrayRGB : string)[]> {
   const img = await loadImage(imgUrl, crossOrigin);
   const cf = new ColorThief();
   const arrayRGB = cf.getPalette(img, colorCount, quality);

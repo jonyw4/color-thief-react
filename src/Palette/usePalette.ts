@@ -5,27 +5,23 @@ import {
   reducer,
   initialReducerState
 } from '../utils';
-import { ColorFormats, ReducerState, UnwrapPromise } from '../types';
-
-export type UsePaletteState = ReducerState<
-  UnwrapPromise<ReturnType<typeof getColorsPaletteFromImgUrl>>
->;
+import { ColorFormats, ReducerState, ArrayRGB } from '../types';
 
 /**
  * React Hook to get palette color from img url
  */
-export default function usePalette(
+export default function usePalette<
+  F extends ColorFormats,
+  S extends ReducerState<F extends 'rgbArray' ? ArrayRGB[] : string[]>
+>(
   imgSrc: string,
   colorCount = 2,
-  format: ColorFormats = 'rgbString',
+  format: F,
   options: { crossOrigin?: string; quality?: number } = {}
-): UsePaletteState {
+): S {
   const { crossOrigin = null, quality = 10 } = options;
 
-  const [state, dispatch] = useReducer(
-    reducer,
-    <UsePaletteState>initialReducerState
-  );
+  const [state, dispatch] = useReducer(reducer, <S>initialReducerState);
 
   useCurrentEffect(
     (isCurrent) => {
@@ -52,5 +48,5 @@ export default function usePalette(
     [imgSrc]
   );
 
-  return state;
+  return <S>state;
 }

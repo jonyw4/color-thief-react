@@ -7,33 +7,6 @@ describe('Color', () => {
   const timeout = 15000;
 
   test(
-    'should be a children with default format',
-    async () => {
-      const children = jest.fn(() => <></>);
-      await act(async () => {
-        render(<Color src={src} children={children} crossOrigin="Anonymous" />);
-      });
-
-      expect(children).toHaveBeenCalledWith({
-        loading: true,
-        error: undefined,
-        data: undefined
-      });
-
-      await waitFor(() => expect(children).toHaveBeenCalledTimes(2), {
-        timeout
-      });
-
-      expect(children).toHaveBeenCalledWith({
-        loading: false,
-        error: undefined,
-        data: 'rgb(199, 203, 205)'
-      });
-    },
-    timeout
-  );
-
-  test(
     'should be a children with rgb array',
     async () => {
       const format = 'rgbArray';
@@ -143,7 +116,12 @@ describe('Color', () => {
       const children = jest.fn(() => <></>);
       await act(async () => {
         render(
-          <Color src="error.jpg" children={children} crossOrigin="Anonymous" />
+          <Color
+            src="error.jpg"
+            format="hex"
+            children={children}
+            crossOrigin="Anonymous"
+          />
         );
       });
 
