@@ -9,8 +9,7 @@ describe('Color', () => {
   test(
     'should be a children with default format',
     async () => {
-      const children = jest.fn(() => null);
-
+      const children = jest.fn(() => <></>);
       await act(async () => {
         render(<Color src={src} children={children} crossOrigin="Anonymous" />);
       });
@@ -38,8 +37,7 @@ describe('Color', () => {
     'should be a children with rgb array',
     async () => {
       const format = 'rgbArray';
-      const children = jest.fn(() => null);
-
+      const children = jest.fn(() => <></>);
       await act(async () => {
         render(
           <Color
@@ -74,8 +72,7 @@ describe('Color', () => {
     'should be a children with rgb string',
     async () => {
       const format = 'rgbString';
-      const children = jest.fn(() => null);
-
+      const children = jest.fn(() => <></>);
       await act(async () => {
         render(
           <Color
@@ -110,8 +107,7 @@ describe('Color', () => {
     'should be a children with hex',
     async () => {
       const format = 'hex';
-      const children = jest.fn(() => null);
-
+      const children = jest.fn(() => <></>);
       await act(async () => {
         render(
           <Color
@@ -144,8 +140,7 @@ describe('Color', () => {
   test(
     'should try to get color from a inexistent image and return error',
     async () => {
-      const children = jest.fn(() => null);
-
+      const children = jest.fn(() => <></>);
       await act(async () => {
         render(
           <Color src="error.jpg" children={children} crossOrigin="Anonymous" />

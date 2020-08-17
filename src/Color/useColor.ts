@@ -5,10 +5,10 @@ import {
   reducer,
   initialReducerState
 } from '../utils';
-import { ColorFormats, ReducerState } from '../types';
+import { ColorFormats, ReducerState, UnwrapPromise } from '../types';
 
 export type UseColorState = ReducerState<
-  ReturnType<typeof getPredominantColorFromImgURL>
+  UnwrapPromise<ReturnType<typeof getPredominantColorFromImgURL>>
 >;
 
 /**

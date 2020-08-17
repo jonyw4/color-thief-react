@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitFor, act } from '@testing-library/react';
-import Palette from './Pallete.component';
+import Palette from './Palette.component';
 
 describe('Palette', () => {
   const src = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png';
@@ -9,7 +9,7 @@ describe('Palette', () => {
   test(
     'should be a children with default format',
     async () => {
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
@@ -40,7 +40,7 @@ describe('Palette', () => {
     'should be a children with rgb array',
     async () => {
       const format = 'rgbArray';
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
@@ -79,7 +79,7 @@ describe('Palette', () => {
     'should be a children with rgb string',
     async () => {
       const format = 'rgbString';
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
@@ -115,7 +115,7 @@ describe('Palette', () => {
     'should be a children with hex',
     async () => {
       const format = 'hex';
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
@@ -151,7 +151,7 @@ describe('Palette', () => {
     'should be a children with hex with 4 colors',
     async () => {
       const format = 'hex';
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
@@ -187,7 +187,7 @@ describe('Palette', () => {
   test(
     'should try to get color from a inexistent image and return error',
     async () => {
-      const children = jest.fn(() => null);
+      const children = jest.fn(() => <></>);
 
       await act(async () => {
         render(
