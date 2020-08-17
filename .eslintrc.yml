@@ -1,0 +1,30 @@
+parser: '@typescript-eslint/parser'
+env:
+  browser: true
+  node: true
+  es6: true
+  'jest/globals': true
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: "module"
+  ecmaFeatures:
+    jsx: true
+settings:
+  react:
+    version: "detect"
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'prettier/@typescript-eslint'
+  - 'plugin:prettier/recommended'
+  - 'plugin:jest/recommended'
+  - 'plugin:react/recommended'
+  - 'plugin:react-hooks/recommended'
+plugins:
+  - '@typescript-eslint'
+  - 'prettier'
+  - 'jest'
+  - 'react'
+  - 'react-hooks'
+rules:
+  "react/no-children-prop": "off"

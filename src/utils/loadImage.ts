@@ -1,10 +1,10 @@
 /**
- * Load a image like a browser
- * @param {String} url
- * @param {String} crossOrigin
- * @returns {Promise} Promise object that returns a image
+ * Load a image in a promise
  */
-export default function loadImage(url, crossOrigin = undefined) {
+export default function loadImage(
+  url: string,
+  crossOrigin: string | null = null
+): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.addEventListener('load', () => {
