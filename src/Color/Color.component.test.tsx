@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { render, act, waitFor } from '@testing-library/react';
 import Color from './Color.component';
 

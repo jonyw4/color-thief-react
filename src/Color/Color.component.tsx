@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ColorFormats, ReducerState, ArrayRGB } from '../types';
 import useColor from './useColor';
 

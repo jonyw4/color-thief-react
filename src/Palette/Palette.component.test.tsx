@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { render, waitFor, act } from '@testing-library/react';
 import Palette from './Palette.component';
 

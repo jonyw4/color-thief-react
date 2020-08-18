@@ -1,5 +1,5 @@
+import * as React from 'react';
 import { useCurrentEffect } from 'use-current-effect';
-import { useReducer } from 'react';
 import {
   getPredominantColorFromImgURL,
   reducer,
@@ -20,7 +20,7 @@ export default function useColor<
 ): S {
   const { crossOrigin = null, quality = 10 } = options;
 
-  const [state, dispatch] = useReducer(reducer, <S>initialReducerState);
+  const [state, dispatch] = React.useReducer(reducer, <S>initialReducerState);
 
   useCurrentEffect(
     (isCurrent) => {
