@@ -46,7 +46,7 @@
     "prettier": "2.0.5",
     "semantic-release": "17.1.2",
     "ts-jest": "26.2.0",
-    "typescript": "3.9.7"
+    "typescript": "4.0.3"
   },
   "keywords": [
     "color-thief-react",
