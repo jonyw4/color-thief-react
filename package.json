@@ -64,7 +64,8 @@
   },
   "release": {
     "branches": [
-      "master"
+      "master",
+      {"name": "beta", "channel": "beta", "prerelease": "beta"}
     ]
   },
   "commitlint": {
