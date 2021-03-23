@@ -15,15 +15,19 @@
     "test": "jest --collectCoverage",
     "test:ci": "jest --collectCoverage && codecov"
   },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
   "dependencies": {
     "colorthief": "2.3.2",
     "prop-types": "15.7.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
     "tslib": "2.0.3",
     "use-current-effect": "2.1.0"
   },
   "devDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@testing-library/react": "10.4.9",
@@ -64,7 +68,8 @@
   },
   "release": {
     "branches": [
-      "master"
+      "master",
+      {"name": "beta", "channel": "beta", "prerelease": "beta"}
     ]
   },
   "commitlint": {
