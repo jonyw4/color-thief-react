@@ -1,7 +1,7 @@
 /**
- * Transform RGB to HEX
+ * Transform RGB to HSL
  */
-export default function rgbToHSL(r: number, g: number, b: number): string {
+export default function rgbToHSL(r: number, g: number, b: number): number[] {
   const _r = r / 255;
   const _g = g / 255;
   const _b = b / 255;
@@ -9,16 +9,19 @@ export default function rgbToHSL(r: number, g: number, b: number): string {
   const min = Math.min(_r, _g, _b);
   let h = 0;
   let s = 0;
-  let v = max;
+  const v = max;
   if (max != min) {
-    let delta = max - min;
+    const delta = max - min;
     s = delta / max;
     switch (max) {
-      case _r: h = (_g - _b) / delta + (g < b ? 6 : 0);
+      case _r:
+        h = (_g - _b) / delta + (g < b ? 6 : 0);
         break;
-      case _g: h = (_b - _r) / delta + 2;
+      case _g:
+        h = (_b - _r) / delta + 2;
         break;
-      case _b: h = (_r - _g) / delta + 4;
+      case _b:
+        h = (_r - _g) / delta + 4;
         break;
     }
   }
