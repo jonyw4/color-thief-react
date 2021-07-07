@@ -1,6 +1,6 @@
 /**
  * Put HSL into a string
  */
-export default function hslStringfy(h: number, s: number, l: number): string {
-  return `hsl(${h}, ${s}%, ${l}%)`;
+export default function hslStringfy(hsl: number[]): string {
+  return `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
 }
