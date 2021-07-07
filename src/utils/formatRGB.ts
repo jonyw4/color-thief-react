@@ -16,7 +16,7 @@ export default function formatRGB<T extends ColorFormats>(
     hex: () => rgbToHex(...arrayRGB),
     rgbArray: () => arrayRGB,
     hslString: () => hslStringfy(rgbToHSL(...arrayRGB)),
-    hslArray: () => rgbToHSL(...arrayRGB),
+    hslArray: () => rgbToHSL(...arrayRGB)
   };
 
   return responses[format]();
