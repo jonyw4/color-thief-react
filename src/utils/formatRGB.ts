@@ -1,7 +1,6 @@
+import convert from 'color-convert';
 import rgbStringfy from './rgbStringfy';
 import hslStringfy from './hslStringfy';
-import rgbToHex from './rgbToHex';
-import rgbToHSL from './rgbToHSL';
 import type { ColorFormats, ArrayRGB } from '../types';
 
 /**
@@ -13,10 +12,11 @@ export default function formatRGB<T extends ColorFormats>(
 ): T extends 'rgbArray' ? ArrayRGB : string {
   const responses: { [key in ColorFormats]: () => any } = {
     rgbString: () => rgbStringfy(...arrayRGB),
-    hex: () => rgbToHex(...arrayRGB),
+    hex: () => convert.rgb.hex(...arrayRGB),
     rgbArray: () => arrayRGB,
-    hslString: () => hslStringfy(rgbToHSL(...arrayRGB)),
-    hslArray: () => rgbToHSL(...arrayRGB)
+    hslString: () => hslStringfy(convert.rgb.hsl(...arrayRGB)),
+    hslArray: () => convert.rgb.hsl(...arrayRGB),
+    keyword: () => convert.rgb.keyword(...arrayRGB)
   };
 
   return responses[format]();
