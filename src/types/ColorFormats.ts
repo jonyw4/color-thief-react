@@ -14,4 +14,5 @@ export type ColorFormats =
   | 'hex'
   | 'rgbArray'
   | 'hslString'
-  | 'hslArray';
+  | 'hslArray'
+  | 'keyword';
