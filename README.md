@@ -46,7 +46,7 @@ Return the predominant color of the image. You can use a React component or hook
 
 `src`: **Required**. Link of the image
 
-`format`: Format of the response. Can be `rgbString`, `hex` or `rgbArray`. Default is `rgbString`
+`format`: Format of the response. Can be `rgbString`, `rgbArray`, `hslString`, `hslArray`, `hex` or a CSS `keyword`. Default is `rgbString`
 
 `crossOrigin`: Tag cross-origin for image
 
