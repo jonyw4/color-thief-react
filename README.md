@@ -46,11 +46,33 @@ Return the predominant color of the image. You can use a React component or hook
 
 `src`: **Required**. Link of the image
 
+---
+
 `format`: Format of the response. Can be `rgbString`, `rgbArray`, `hslString`, `hslArray`, `hex` or a CSS `keyword`. Default is `rgbString`
 
+Color conversion is made possible by the [color-convert](https://www.npmjs.com/package/color-convert) package.
+
+**Examples**
+
+rgbString: `'rgb(89, 197, 182)'`
+rgbArray: `[89, 197, 182]`
+hslString: `'hsl(172, 48%, 56%)'`
+hslArray: `[172, 48, 56]`
+hex: `'#59c5b6'`
+keyword: `'mediumaquamarine'`
+
+
+**CSS Keywords**
+`keyword`: Color keywords are case-insensitive identifiers that represent a specific color, such as `red`, `blue`, `black`, or `lightseagreen`. 
+
+Keywords are matched to the closest color. See this page on [Web Colors](https://drafts.csswg.org/css-color/#named-colors) for a complete list of colors that can be returned with the `keyword` color format.  
+
+---
 `crossOrigin`: Tag cross-origin for image
 
-`quality`: Quality determines how many pixels are skipped before the nex one is sampled.We rarely need to sample every single pixel in the image to get good results. The bigger the number, the faster a value will be returned. Read more in https://lokeshdhakar.com/projects/color-thief/
+---
+
+`quality`: Quality determines how many pixels are skipped before the next one is sampled. We rarely need to sample every single pixel in the image to get good results. The bigger the number, the faster a value will be returned. Read more in https://lokeshdhakar.com/projects/color-thief/
 
 ### Usage
 ```jsx
@@ -62,7 +84,6 @@ const { data, loading, error } = useColor(src, format, { crossOrigin, quality})
   Text with the predominant color
 </div>
 ```
-
 ```jsx
 import Color from 'color-thief-react';
 // In your render...
@@ -81,11 +102,11 @@ Return a palette of colors based on the predominance of colors on the image. You
 
 `colorCount`: Count of colors of the palette. Default is 2
 
-`format`: Format of the response. Can be `rgbString`, `hex` or `rgbArray`. Default is `rgbString`
+`format`: Format of the response. See the `format` section in the [Color](#color) chapter for a detailed API.
 
 `crossOrigin`: Tag cross-origin for image
 
-`quality`: Default is `10`. Quality determines how many pixels are skipped before the nex one is sampled.We rarely need to sample every single pixel in the image to get good results. The bigger the number, the faster a value will be returned. Read more in https://lokeshdhakar.com/projects/color-thief/
+`quality`: Default is `10`. Quality determines how many pixels are skipped before the next one is sampled. We rarely need to sample every single pixel in the image to get good results. The bigger the number, the faster a value will be returned. Read more in https://lokeshdhakar.com/projects/color-thief/
 
 ```jsx
 import { Palette } from 'color-thief-react';
