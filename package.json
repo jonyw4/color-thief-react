@@ -22,7 +22,7 @@
   "dependencies": {
     "colorthief": "2.3.2",
     "prop-types": "15.7.2",
-    "tslib": "2.0.3",
+    "tslib": "2.6.2",
     "use-current-effect": "2.1.0"
   },
   "devDependencies": {
